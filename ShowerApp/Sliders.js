@@ -1,21 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, Image, Button} from 'react-native';
 
-function Sliders() {
+export default function Sliders() {
     return(
         <SafeAreaView style = {[styles.container, styles.ButtonStyle]}>
-            <SafeAreaView style= {styles.ButtonStyle}>
+            <SafeAreaView style= {styles.Sliders}>
                 <Button 
                     title = "My Suite"
-                    onPress = {() => console.log("Button tapped") } />
-                <Button 
-                    title = "Home"
-                    onPress = {() => console.log("Button tapped") } />
-                    if (disabled?) {
-                        disabled
-                    }
-                <Button 
-                    title = "Schedule"
                     onPress = {() => console.log("Button tapped") } />
             </SafeAreaView>            
         </SafeAreaView>
@@ -26,21 +17,18 @@ const styles = StyleSheet.create({
     container: {
       flexDirection: 'row',
       backgroundColor: '#ffff',
-      alignItems: 'center',
-      justifyContent: 'center',
+      alignItems: 'flex-end',
+      justifyContent: 'flex-end',
     },
 
     ButtonStyle: {
-        flexDirection: 'row',
-        width: 70,
+        width: "33%",
         height: 70,
         backgroundColor: "#fff5ee",
-        justifyContent: "flex-end",
     },
 
-    
-    
-
-
+    sliders: {
+        flexDirection: 'row'
+    },
 
   });
