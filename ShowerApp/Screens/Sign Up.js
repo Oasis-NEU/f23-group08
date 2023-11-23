@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, Image, TextInput, Button} from 'react-native';
 import {useEffect, useState} from 'react';
 
-export default function SignUp( {navigation} ) {  
+export default function SignIn() {  
     const [Username, setUsername] = useState('');
     const [Password, setPassword] = useState('');
 
@@ -16,29 +16,24 @@ export default function SignUp( {navigation} ) {
             style={{height: 40}}          
             placeholder="Username"
             onChangeText={(text) => setUsername(text)}
-          />
+         />
 
           <TextInput
             style={{height: 40}}
             secureTextEntry={true}
             placeholder="Password"
             onChangeText={(text) => setPassword(text)}       
-          />
+         />
 
          <Button style = {styles.Button}
             title = "Sign Up"
             onPress = {() => console.log("Your username is " + Username + " and your password is " + Password)}
          
-          />
+         />
 
-        <Button
-          title = "Already have an account? Log in"
-          onPress = {() => navigation.navigate('Log in')} />
           
         </SafeAreaView>
-
-      
-      );
+     );
 }
 
 function addDatabase() {
@@ -55,9 +50,7 @@ const styles = StyleSheet.create({
 
     Button: {
         backgroundColor: '#ffgff'
-    }
-
-    
+    }  
 
 
 
