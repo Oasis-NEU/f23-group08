@@ -24,8 +24,7 @@ const Tab = createBottomTabNavigator();
 
 function Main() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator initialRouteName='Home'>
+      <Tab.Navigator>
         
         <Tab.Screen 
           name = "My Suite" 
@@ -40,8 +39,6 @@ function Main() {
           component = {Schedule} />
           
       </Tab.Navigator>
-  
-    </NavigationContainer>
     
   );
 }
@@ -59,7 +56,14 @@ function LoggedOut() {
         name = "Log in" 
         component = {LogIn} />
 
-      
+      <Stack.Screen
+        name="Tabs"
+        component={Main} />
+
+      <Stack.Screen
+        name="Edit Schedule"
+        component={EditSchedule} /> 
+ 
           
       </Stack.Navigator>
     </NavigationContainer>

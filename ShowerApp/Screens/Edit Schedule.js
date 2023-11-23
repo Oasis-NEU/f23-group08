@@ -7,9 +7,6 @@ export default function EditSchedule() {
 
           <StatusBar style="auto" />
 
-            <SafeAreaView style = {styles.sliders}>
-
-            </SafeAreaView>
         </SafeAreaView>
       );
 }

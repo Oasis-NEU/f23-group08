@@ -2,9 +2,14 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, Image, TextInput, Button} from 'react-native';
 import {useEffect, useState} from 'react';
 
-export default function LogIn() {  
+export default function LogIn( {navigation} ) {  
     const [Username, setUsername] = useState('');
     const [Password, setPassword] = useState('');
+
+    function checkDatabase() {
+        // Check if username and password combination exist in database
+ 
+    }
 
     return (
         
@@ -27,7 +32,7 @@ export default function LogIn() {
 
          <Button style = {styles.Button}
             title = "Log in"
-            onPress = {() => console.log("Your username is " + Username + " and your password is " + Password)}
+            onPress = {() => navigation.navigate('Tabs', {screen: "Home"})}
          
          />
 
@@ -36,9 +41,6 @@ export default function LogIn() {
       );
 }
 
-function addDatabase() {
-    // Check if username and password combination exists in database
-}
 
 const styles = StyleSheet.create({
     container: {
