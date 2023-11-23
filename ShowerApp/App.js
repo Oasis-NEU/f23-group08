@@ -14,7 +14,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  return Main()
+  return LoggedOut()
 }
 
 const Tab = createBottomTabNavigator();
@@ -43,15 +43,15 @@ function Main() {
 function LoggedOut() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
+      <Stack.Navigator initialRouteName='Sign up'>
+        
+      <Stack.Screen
+          name = "Sign Up" 
+          component = {SignUp} />
 
       <Stack.Screen
           name = "Log in" 
           component = {LogIn} />
-
-      <Stack.Screen
-          name = "Sign Up" 
-          component = {SignUp} />
 
         
           
