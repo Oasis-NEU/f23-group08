@@ -1,9 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, Image, TextInput, Button} from 'react-native';
 import {useEffect, useState} from 'react';
-import Sliders from '../Components/Sliders';
 
-export default function SignIn() {  
+export default function SignUp( {navigation} ) {  
     const [Username, setUsername] = useState('');
     const [Password, setPassword] = useState('');
 
@@ -32,8 +31,13 @@ export default function SignIn() {
          
          />
 
+        <Button
+          title = "Already have an account? Log in"
+          onPress = {() => navigation.navigate('Log in')} />
           
         </SafeAreaView>
+
+      
       );
 }
 
