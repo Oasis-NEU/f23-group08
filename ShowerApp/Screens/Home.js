@@ -7,9 +7,7 @@ export default function Home() {
 
           <StatusBar style="auto" />
 
-            <SafeAreaView style = {styles.sliders}>
 
-            </SafeAreaView>
         </SafeAreaView>
       );
 }

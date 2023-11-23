@@ -6,6 +6,12 @@ export default function SignUp( {navigation} ) {
     const [Username, setUsername] = useState('');
     const [Password, setPassword] = useState('');
 
+    function addDatabase() {
+      return console.log("Your username is " + Username + " and your password is " + Password)
+        //   Change up to something that adds username and password to the database
+    }
+
+    
     return (
         
         <SafeAreaView style={styles.container}>
@@ -27,7 +33,7 @@ export default function SignUp( {navigation} ) {
 
          <Button style = {styles.Button}
             title = "Sign Up"
-            onPress = {() => console.log("Your username is " + Username + " and your password is " + Password)}
+            onPress = {addDatabase}
          
          />
 
@@ -39,10 +45,6 @@ export default function SignUp( {navigation} ) {
 
       
       );
-}
-
-function addDatabase() {
-    // Do something to add username and password to the database
 }
 
 const styles = StyleSheet.create({
