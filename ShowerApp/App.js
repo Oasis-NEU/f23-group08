@@ -9,13 +9,41 @@ import MySuite from './Screens/MySuite';
 import Schedule from './Screens/Schedule';
 import SignUp from './Screens/Sign Up';
 import LogIn from './Screens/Log In';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  return Main()
+}
+
+const Tab = createBottomTabNavigator();
+
+function Main() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Sign Up'>
+      <Tab.Navigator>
+        
+        <Tab.Screen 
+          name = "My Suite" 
+          component = {MySuite} />
+
+        <Tab.Screen 
+          name = "Home" 
+          component = {Home} />
+          
+        <Tab.Screen 
+          name = "Schedule"
+          component = {Schedule} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
+
+function LoggedOut() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Home'>
 
       <Stack.Screen
           name = "Log in" 
@@ -25,23 +53,12 @@ export default function App() {
           name = "Sign Up" 
           component = {SignUp} />
 
-        <Stack.Screen 
-          name = "Home" 
-          component = {Home} />
-
-        <Stack.Screen 
-          name = "My Suite" 
-          component = {MySuite} />
         
-        <Stack.Screen 
-          name = "Schedule"
-          component = {Schedule} />
           
       </Stack.Navigator>
     </NavigationContainer>
 
   );
-
 }
 
 const styles = StyleSheet.create({
