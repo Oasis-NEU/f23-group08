@@ -3,13 +3,16 @@ import { StyleSheet, Text, View} from 'react-native';
 import * as React from 'react';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Home from './Screens/Home';
 import MySuite from './Screens/MySuite';
 import Schedule from './Screens/Schedule';
 import SignUp from './Screens/Sign Up';
 import LogIn from './Screens/Log In';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import EditSchedule from './Screens/Edit Schedule';
+import { SupabaseAuthClient } from '@supabase/supabase-js/dist/module/lib/SupabaseAuthClient';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -22,7 +25,7 @@ const Tab = createBottomTabNavigator();
 function Main() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator initialRouteName='Home'>
         
         <Tab.Screen 
           name = "My Suite" 
@@ -35,8 +38,11 @@ function Main() {
         <Tab.Screen 
           name = "Schedule"
           component = {Schedule} />
+          
       </Tab.Navigator>
+  
     </NavigationContainer>
+    
   );
 }
 
@@ -46,14 +52,14 @@ function LoggedOut() {
       <Stack.Navigator initialRouteName='Sign up'>
         
       <Stack.Screen
-          name = "Sign Up" 
-          component = {SignUp} />
+        name = "Sign Up" 
+        component = {SignUp} />
 
       <Stack.Screen
-          name = "Log in" 
-          component = {LogIn} />
+        name = "Log in" 
+        component = {LogIn} />
 
-        
+      
           
       </Stack.Navigator>
     </NavigationContainer>

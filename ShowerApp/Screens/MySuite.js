@@ -5,7 +5,7 @@ export default function MySuite() {
     return (
         <SafeAreaView style={styles.container}>
 
-          <Text>Welcome to My Suite!</Text>
+          <Text>Your Suitemates</Text>
 
           <StatusBar style="auto" />
 
