@@ -1,22 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView, Image, Button} from 'react-native';  
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { StyleSheet, Text, View, SafeAreaView, Image, Button} from 'react-native';
 
-export default function Sliders( { navigation } ) {
+export default function Sliders( {navigation} ) {
     
     return(
             <SafeAreaView style= {styles.container}>
                 <Button 
                     title = "My Suite"
-                    onPress = {() => navigation.navigate('My Suite') } />
+                    onPress = {() => navigation.navigation('My Suite')} />
                 <Button 
                     title = "Home"
-                    onPress = {() => navigation.navigate('Home') } />
+                    onPress = {() => navigation.navigation('Home')} />
 
                 <Button 
                     title = "Schedule"
-                    onPress = {() => navigation.navigate('Schedule') } />
+                    onPress = {() => navigation.navigation('Schedule')} />
             </SafeAreaView>            
     );
 }
